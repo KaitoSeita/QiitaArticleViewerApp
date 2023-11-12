@@ -8,17 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		353A19602B0091BF007EA9A3 /* QiitaArticleViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A195F2B0091BF007EA9A3 /* QiitaArticleViewerApp.swift */; };
-		353A19622B0091C0007EA9A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19612B0091C0007EA9A3 /* ContentView.swift */; };
+		353A19622B0091C0007EA9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19612B0091C0007EA9A3 /* HomeView.swift */; };
 		353A19642B0091C2007EA9A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353A19632B0091C2007EA9A3 /* Assets.xcassets */; };
 		353A19672B0091C2007EA9A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353A19662B0091C2007EA9A3 /* Preview Assets.xcassets */; };
+		353A196F2B0092B0007EA9A3 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 353A196E2B0092B0007EA9A3 /* AlertToast */; };
+		353A19722B0092C9007EA9A3 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 353A19712B0092C9007EA9A3 /* RswiftLibrary */; };
+		353A19742B0092C9007EA9A3 /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 353A19732B0092C9007EA9A3 /* rswift */; };
+		353A19852B0093AC007EA9A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 353A19842B0093AC007EA9A3 /* Localizable.strings */; };
+		353A19872B0093C7007EA9A3 /* View+AlertToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19862B0093C7007EA9A3 /* View+AlertToast.swift */; };
+		353A19892B0093D2007EA9A3 /* View+Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19882B0093D2007EA9A3 /* View+Spacer.swift */; };
+		353A198B2B0093DE007EA9A3 /* View+NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A198A2B0093DE007EA9A3 /* View+NavigationBackButton.swift */; };
+		353A198D2B0093E8007EA9A3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A198C2B0093E8007EA9A3 /* APIService.swift */; };
+		353A198F2B0093F0007EA9A3 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A198E2B0093F0007EA9A3 /* APIRequest.swift */; };
+		353A19912B009402007EA9A3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19902B009402007EA9A3 /* Article.swift */; };
+		353A19932B009409007EA9A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19922B009409007EA9A3 /* User.swift */; };
+		353A19972B00941F007EA9A3 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19962B00941F007EA9A3 /* Tags.swift */; };
+		353A19992B009428007EA9A3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19982B009428007EA9A3 /* APIError.swift */; };
+		353A199B2B009436007EA9A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A199A2B009436007EA9A3 /* HomeViewModel.swift */; };
+		353A199E2B009450007EA9A3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A199D2B009450007EA9A3 /* TabBar.swift */; };
+		353A19A22B0096E0007EA9A3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19A12B0096DF007EA9A3 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		353A195C2B0091BF007EA9A3 /* QiitaArticleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaArticleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		353A195F2B0091BF007EA9A3 /* QiitaArticleViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewerApp.swift; sourceTree = "<group>"; };
-		353A19612B0091C0007EA9A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		353A19612B0091C0007EA9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		353A19632B0091C2007EA9A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		353A19662B0091C2007EA9A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		353A19842B0093AC007EA9A3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		353A19862B0093C7007EA9A3 /* View+AlertToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertToast.swift"; sourceTree = "<group>"; };
+		353A19882B0093D2007EA9A3 /* View+Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Spacer.swift"; sourceTree = "<group>"; };
+		353A198A2B0093DE007EA9A3 /* View+NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBackButton.swift"; sourceTree = "<group>"; };
+		353A198C2B0093E8007EA9A3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		353A198E2B0093F0007EA9A3 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		353A19902B009402007EA9A3 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		353A19922B009409007EA9A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		353A19962B00941F007EA9A3 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		353A19982B009428007EA9A3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		353A199A2B009436007EA9A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		353A199D2B009450007EA9A3 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		353A19A12B0096DF007EA9A3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353A196F2B0092B0007EA9A3 /* AlertToast in Frameworks */,
+				353A19722B0092C9007EA9A3 /* RswiftLibrary in Frameworks */,
+				353A19742B0092C9007EA9A3 /* rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				353A195F2B0091BF007EA9A3 /* QiitaArticleViewerApp.swift */,
-				353A19612B0091C0007EA9A3 /* ContentView.swift */,
+				353A19802B009352007EA9A3 /* Resources */,
+				353A19812B00935B007EA9A3 /* Extensions */,
+				353A197E2B00934D007EA9A3 /* Model */,
+				353A197A2B009343007EA9A3 /* View */,
+				353A197C2B009348007EA9A3 /* ViewModel */,
+				353A19822B009365007EA9A3 /* Network */,
 				353A19632B0091C2007EA9A3 /* Assets.xcassets */,
 				353A19652B0091C2007EA9A3 /* Preview Content */,
 			);
@@ -65,6 +102,70 @@
 				353A19662B0091C2007EA9A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		353A197A2B009343007EA9A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				353A19612B0091C0007EA9A3 /* HomeView.swift */,
+				353A19832B009372007EA9A3 /* Common */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		353A197C2B009348007EA9A3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				353A199A2B009436007EA9A3 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		353A197E2B00934D007EA9A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				353A19902B009402007EA9A3 /* Article.swift */,
+				353A19922B009409007EA9A3 /* User.swift */,
+				353A19962B00941F007EA9A3 /* Tags.swift */,
+				353A19982B009428007EA9A3 /* APIError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		353A19802B009352007EA9A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				353A19842B0093AC007EA9A3 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		353A19812B00935B007EA9A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				353A19862B0093C7007EA9A3 /* View+AlertToast.swift */,
+				353A19882B0093D2007EA9A3 /* View+Spacer.swift */,
+				353A198A2B0093DE007EA9A3 /* View+NavigationBackButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		353A19822B009365007EA9A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				353A198C2B0093E8007EA9A3 /* APIService.swift */,
+				353A198E2B0093F0007EA9A3 /* APIRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		353A19832B009372007EA9A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				353A199D2B009450007EA9A3 /* TabBar.swift */,
+				353A19A12B0096DF007EA9A3 /* WebView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,8 +182,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				353A19762B0092D7007EA9A3 /* PBXTargetDependency */,
 			);
 			name = QiitaArticleViewer;
+			packageProductDependencies = (
+				353A196E2B0092B0007EA9A3 /* AlertToast */,
+				353A19712B0092C9007EA9A3 /* RswiftLibrary */,
+				353A19732B0092C9007EA9A3 /* rswift */,
+			);
 			productName = QiitaArticleViewer;
 			productReference = 353A195C2B0091BF007EA9A3 /* QiitaArticleViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +218,10 @@
 				Base,
 			);
 			mainGroup = 353A19532B0091BF007EA9A3;
+			packageReferences = (
+				353A196D2B0092B0007EA9A3 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				353A19702B0092C9007EA9A3 /* XCRemoteSwiftPackageReference "R" */,
+			);
 			productRefGroup = 353A195D2B0091BF007EA9A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				353A19672B0091C2007EA9A3 /* Preview Assets.xcassets in Resources */,
+				353A19852B0093AC007EA9A3 /* Localizable.strings in Resources */,
 				353A19642B0091C2007EA9A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,12 +249,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				353A19622B0091C0007EA9A3 /* ContentView.swift in Sources */,
+				353A19892B0093D2007EA9A3 /* View+Spacer.swift in Sources */,
+				353A198F2B0093F0007EA9A3 /* APIRequest.swift in Sources */,
+				353A19872B0093C7007EA9A3 /* View+AlertToast.swift in Sources */,
+				353A19622B0091C0007EA9A3 /* HomeView.swift in Sources */,
+				353A19912B009402007EA9A3 /* Article.swift in Sources */,
+				353A19932B009409007EA9A3 /* User.swift in Sources */,
 				353A19602B0091BF007EA9A3 /* QiitaArticleViewerApp.swift in Sources */,
+				353A199B2B009436007EA9A3 /* HomeViewModel.swift in Sources */,
+				353A198D2B0093E8007EA9A3 /* APIService.swift in Sources */,
+				353A199E2B009450007EA9A3 /* TabBar.swift in Sources */,
+				353A19972B00941F007EA9A3 /* Tags.swift in Sources */,
+				353A198B2B0093DE007EA9A3 /* View+NavigationBackButton.swift in Sources */,
+				353A19992B009428007EA9A3 /* APIError.swift in Sources */,
+				353A19A22B0096E0007EA9A3 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		353A19762B0092D7007EA9A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 353A19752B0092D7007EA9A3 /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		353A19682B0091C2007EA9A3 /* Debug */ = {
@@ -344,6 +475,47 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		353A196D2B0092B0007EA9A3 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+		353A19702B0092C9007EA9A3 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		353A196E2B0092B0007EA9A3 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353A196D2B0092B0007EA9A3 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+		353A19712B0092C9007EA9A3 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353A19702B0092C9007EA9A3 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		353A19732B0092C9007EA9A3 /* rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 353A19702B0092C9007EA9A3 /* XCRemoteSwiftPackageReference "R" */;
+			productName = rswift;
+		};
+		353A19752B0092D7007EA9A3 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 353A19542B0091BF007EA9A3 /* Project object */;
 }
