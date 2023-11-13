@@ -9,13 +9,13 @@ import SwiftUI
 
 extension View {
     
-    func HeightSpacer(height: CGFloat) -> some View {
+    func HeightSpacer(value: CGFloat) -> some View {
         Spacer()
-            .frame(height: height)
+            .frame(height: value)
     }
     
-    func WidthSpacer(width: CGFloat) -> some View {
+    func WidthSpacer(value: CGFloat) -> some View {
         Spacer()
-            .frame(width: width)
+            .frame(width: value)
     }
 }

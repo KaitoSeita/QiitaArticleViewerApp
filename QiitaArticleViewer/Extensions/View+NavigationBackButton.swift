@@ -35,10 +35,8 @@ struct CustomBackwardButton: ViewModifier {
                             }, label: {
                                 Image(systemName: "arrow.uturn.backward")
                                     .padding()
-                                    .background(
-                                        Circle()
-                                            .foregroundColor(.white)
-                                    )
+                                    .background(.ultraThinMaterial)
+                                    .cornerRadius(200)
                             }
                         )
                         .tint(.black)
