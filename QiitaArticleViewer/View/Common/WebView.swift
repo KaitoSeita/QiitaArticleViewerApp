@@ -10,6 +10,8 @@ import WebKit
 
 struct WebView: View {
     let url: URL
+    
+    @EnvironmentObject var tabViewModel: TopTabViewModel
 
     var body: some View {
         ZStack {
@@ -17,6 +19,16 @@ struct WebView: View {
                 .ignoresSafeArea(edges: .bottom)
             Color.clear
                 .customBackwardButton()
+        }
+        .onAppear {
+            withAnimation(.linear) {
+                tabViewModel.isPresented = false
+            }
+        }
+        .onDisappear {
+            withAnimation(.linear) {
+                tabViewModel.isPresented = true
+            }
         }
     }
 }
