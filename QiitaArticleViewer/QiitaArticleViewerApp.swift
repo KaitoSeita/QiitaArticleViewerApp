@@ -11,7 +11,7 @@ import SwiftUI
 struct QiitaArticleViewerApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TopTabView()
         }
     }
 }

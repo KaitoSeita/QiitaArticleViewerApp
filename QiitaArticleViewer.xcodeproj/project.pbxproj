@@ -27,6 +27,15 @@
 		353A199B2B009436007EA9A3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A199A2B009436007EA9A3 /* HomeViewModel.swift */; };
 		353A199E2B009450007EA9A3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A199D2B009450007EA9A3 /* TabBar.swift */; };
 		353A19A22B0096E0007EA9A3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19A12B0096DF007EA9A3 /* WebView.swift */; };
+		353A19A52B00C62D007EA9A3 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19A42B00C62D007EA9A3 /* Tab.swift */; };
+		353A19A82B00DA1F007EA9A3 /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19A72B00DA1F007EA9A3 /* TopTabView.swift */; };
+		353A19AB2B00DAAC007EA9A3 /* TopTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19AA2B00DAAC007EA9A3 /* TopTabViewModel.swift */; };
+		353A19AE2B00EB07007EA9A3 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19AD2B00EB07007EA9A3 /* StockView.swift */; };
+		353A19B12B00EB16007EA9A3 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19B02B00EB16007EA9A3 /* LikesView.swift */; };
+		353A19B42B00EB20007EA9A3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19B32B00EB20007EA9A3 /* AccountView.swift */; };
+		353A19B72B00EB32007EA9A3 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19B62B00EB32007EA9A3 /* StockViewModel.swift */; };
+		353A19BA2B00EB41007EA9A3 /* LikesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19B92B00EB41007EA9A3 /* LikesViewModel.swift */; };
+		353A19BC2B00EB4A007EA9A3 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353A19BB2B00EB4A007EA9A3 /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,15 @@
 		353A199A2B009436007EA9A3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		353A199D2B009450007EA9A3 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		353A19A12B0096DF007EA9A3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		353A19A42B00C62D007EA9A3 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		353A19A72B00DA1F007EA9A3 /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
+		353A19AA2B00DAAC007EA9A3 /* TopTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabViewModel.swift; sourceTree = "<group>"; };
+		353A19AD2B00EB07007EA9A3 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
+		353A19B02B00EB16007EA9A3 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
+		353A19B32B00EB20007EA9A3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		353A19B62B00EB32007EA9A3 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
+		353A19B92B00EB41007EA9A3 /* LikesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesViewModel.swift; sourceTree = "<group>"; };
+		353A19BB2B00EB4A007EA9A3 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +125,11 @@
 		353A197A2B009343007EA9A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				353A19A72B00DA1F007EA9A3 /* TopTabView.swift */,
 				353A19612B0091C0007EA9A3 /* HomeView.swift */,
+				353A19AD2B00EB07007EA9A3 /* StockView.swift */,
+				353A19B02B00EB16007EA9A3 /* LikesView.swift */,
+				353A19B32B00EB20007EA9A3 /* AccountView.swift */,
 				353A19832B009372007EA9A3 /* Common */,
 			);
 			path = View;
@@ -116,7 +138,11 @@
 		353A197C2B009348007EA9A3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				353A19AA2B00DAAC007EA9A3 /* TopTabViewModel.swift */,
 				353A199A2B009436007EA9A3 /* HomeViewModel.swift */,
+				353A19B62B00EB32007EA9A3 /* StockViewModel.swift */,
+				353A19B92B00EB41007EA9A3 /* LikesViewModel.swift */,
+				353A19BB2B00EB4A007EA9A3 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -128,6 +154,7 @@
 				353A19922B009409007EA9A3 /* User.swift */,
 				353A19962B00941F007EA9A3 /* Tags.swift */,
 				353A19982B009428007EA9A3 /* APIError.swift */,
+				353A19A42B00C62D007EA9A3 /* Tab.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,18 +276,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353A19A82B00DA1F007EA9A3 /* TopTabView.swift in Sources */,
+				353A19B12B00EB16007EA9A3 /* LikesView.swift in Sources */,
 				353A19892B0093D2007EA9A3 /* View+Spacer.swift in Sources */,
 				353A198F2B0093F0007EA9A3 /* APIRequest.swift in Sources */,
+				353A19B42B00EB20007EA9A3 /* AccountView.swift in Sources */,
 				353A19872B0093C7007EA9A3 /* View+AlertToast.swift in Sources */,
+				353A19B72B00EB32007EA9A3 /* StockViewModel.swift in Sources */,
 				353A19622B0091C0007EA9A3 /* HomeView.swift in Sources */,
+				353A19AB2B00DAAC007EA9A3 /* TopTabViewModel.swift in Sources */,
 				353A19912B009402007EA9A3 /* Article.swift in Sources */,
 				353A19932B009409007EA9A3 /* User.swift in Sources */,
+				353A19BC2B00EB4A007EA9A3 /* AccountViewModel.swift in Sources */,
 				353A19602B0091BF007EA9A3 /* QiitaArticleViewerApp.swift in Sources */,
+				353A19AE2B00EB07007EA9A3 /* StockView.swift in Sources */,
 				353A199B2B009436007EA9A3 /* HomeViewModel.swift in Sources */,
 				353A198D2B0093E8007EA9A3 /* APIService.swift in Sources */,
 				353A199E2B009450007EA9A3 /* TabBar.swift in Sources */,
 				353A19972B00941F007EA9A3 /* Tags.swift in Sources */,
+				353A19BA2B00EB41007EA9A3 /* LikesViewModel.swift in Sources */,
 				353A198B2B0093DE007EA9A3 /* View+NavigationBackButton.swift in Sources */,
+				353A19A52B00C62D007EA9A3 /* Tab.swift in Sources */,
 				353A19992B009428007EA9A3 /* APIError.swift in Sources */,
 				353A19A22B0096E0007EA9A3 /* WebView.swift in Sources */,
 			);
