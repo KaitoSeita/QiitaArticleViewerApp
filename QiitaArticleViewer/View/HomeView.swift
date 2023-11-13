@@ -8,32 +8,34 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var viewModel = HomeViewModel()
     
     @State private var page = 1
+    @State var isDisappered = false
     
     var body: some View {
         NavigationStack {
-            List(homeViewModel.article) { data in
+            List(viewModel.article) { data in
                 ListItemView(title: data.title,
                              user: data.user,
                              likesCount: data.likesCount,
                              createdDate: data.createdAt,
                              viewCount: data.viewCount,
                              tags: data.tags,
-                             url: data.url
-                )
+                             url: data.url)
                 .onAppear {
-                    homeViewModel.loadNext(id: data.id)
+                    viewModel.loadNext(id: data.id)
                 }
             }
             .listStyle(.plain)
             .refreshable {
-                homeViewModel.initializeArticle()
+                withAnimation(.linear) {
+                    viewModel.initializeArticle()
+                }
             }
             .onAppear {
-                if homeViewModel.article.isEmpty {
-                    homeViewModel.initializeArticle()
+                if viewModel.article.isEmpty {
+                    viewModel.initializeArticle()
                 }
             }
         }
