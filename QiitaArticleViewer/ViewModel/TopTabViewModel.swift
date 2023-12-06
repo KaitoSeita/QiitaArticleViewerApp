@@ -15,7 +15,7 @@ protocol TopTabViewModelProtocol: ObservableObject {
 
 final class TopTabViewModel: TopTabViewModelProtocol {
     @Published var isPresented = true
-    
+    @Published var isTappingTabItem: TabSelection = .Default
 }
 
 extension TopTabViewModel {
@@ -29,16 +29,15 @@ extension TopTabViewModel {
     }
     
     func setDestination(selection: TabSelection) -> AnyView? {
-            
-            switch selection {
-            case .Home:
-                return AnyView(HomeView())
-            case .Stock:
-                return AnyView(StockView())
-            case .Likes:
-                return AnyView(LikesView())
-            case .Account:
-                return AnyView(AccountView())
-            }
+        switch selection {
+        case .Home:
+            return AnyView(HomeView())
+        case .Stock:
+            return AnyView(StockView())
+        case .History:
+            return AnyView(ArchiveView())
+        case .Default:
+            return AnyView(EmptyView())
         }
+    }
 }
