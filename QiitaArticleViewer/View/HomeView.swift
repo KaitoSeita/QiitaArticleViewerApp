@@ -5,106 +5,107 @@
 //  Created by kaito-seita on 2023/11/05.
 //
 
+import RealmSwift
 import SwiftUI
 
+// Cookieが共有されないことがわかったので、認証と普通のログインで2回ログインしてもらうことになる
+// articleがemptyだったら検索条件の変更を促す表示
+
 struct HomeView: View {
+    @EnvironmentObject var tabViewModel: TopTabViewModel
+    
     @StateObject var viewModel = HomeViewModel()
     
     @State private var page = 1
-    @State var isDisappered = false
+    @State var isShowingSearchBar = false
     
     var body: some View {
         NavigationStack {
-            List(viewModel.article) { data in
-                ListItemView(title: data.title,
-                             user: data.user,
-                             likesCount: data.likesCount,
-                             createdDate: data.createdAt,
-                             viewCount: data.viewCount,
-                             tags: data.tags,
-                             url: data.url)
-                .onAppear {
-                    viewModel.loadNext(id: data.id)
+            ZStack {
+                VStack {
+                    if viewModel.isShowingSearchBar {
+                        Spacer().frame(height: 50)
+                    }
+                    ScrollViewReader { proxy in
+                        List(viewModel.article) { article in
+                            NavigationLink(destination: WebView(url: URL(string: article.url)!)
+                                .onAppear {
+                                    viewModel.onTapArticle(data: article)
+                                }
+                            ) {
+                                ListItemView(title: article.title,
+                                             user: article.user,
+                                             likesCount: article.likesCount,
+                                             createdDate: article.createdAt,
+                                             viewCount: article.viewCount,
+                                             tags: article.tags)
+                                .onAppear {
+                                    if viewModel.article.count > 7 {
+                                        viewModel.onAppearEndOfList(id: article.id)
+                                        viewModel.onAppearFirstOfList(id: article.id)
+                                    }
+                                }
+                                .swipeActions(edge: .leading) {
+                                    Button {
+                                        viewModel.onTapStockButton(id: article.articleId)
+                                    } label: {
+                                        Image(systemName: "folder.fill.badge.plus")
+                                    }
+                                }
+                                .id(article.id)
+                            }
+                        }
+                        .scrollContentBackground(.hidden)
+                        .background(Color.white)
+                        .listStyle(.plain)
+                        .refreshable {
+                            viewModel.onRefresh()
+                        }
+                        .onAppear {
+                            if viewModel.article.isEmpty {
+                                viewModel.onRefresh()
+                            }
+                        }
+                    }
                 }
-            }
-            .listStyle(.plain)
-            .refreshable {
-                withAnimation(.linear) {
-                    viewModel.initializeArticle()
-                }
-            }
-            .onAppear {
-                if viewModel.article.isEmpty {
-                    viewModel.initializeArticle()
-                }
+                Header(homeViewModel: viewModel)
+                    .toast(isShowingErrorMessage: $viewModel.isShowingErrorMessage,
+                           isShowingSuccessMessage: $viewModel.isShowingSuccessMessage,
+                           errorMessage: viewModel.errorMessage,
+                           successMessage: viewModel.successMessage)
             }
         }
     }
 }
 
-private struct ListItemView: View {
-    let title: String?
-    let user: User
-    let likesCount: Int?
-    let createdDate: String?
-    let viewCount: Int?
-    let tags: [Tags]
-    let url: String
+private struct Header: View {
+    @EnvironmentObject var tabViewModel: TopTabViewModel
+    
+    @State private var isShowingAccountView = false
+    @State private var isShowingSearchBar = false
+    
+    @Namespace var profile
+    @Namespace var search
+    
+    @ObservedObject var homeViewModel: HomeViewModel
     
     var body: some View {
-        NavigationLink(destination: WebView(url: URL(string: url)!)) {
-            VStack(spacing: 10) {
-                HStack {
-                    AsyncImage(url: URL(string: user.profile_image_url!)) { image in
-                        image
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 40, height:40)
-                    } placeholder: {
-                        Circle()
-                            .foregroundColor(.gray)
-                            .frame(width: 40, height:40)
-                    }
-                    Spacer()
-                        .frame(width: 10)
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("@\(user.id!)")
-                                .font(.system(size: 12, design: .rounded))
-                            Text(user.name != "" ? "(\(user.name!))" : "")
-                                .font(.system(size: 12, design: .rounded))
-                        }
-                        Text(createdDate!)
-                            .font(.system(size: 12, design: .rounded))
-                            .foregroundColor(.black.opacity(0.7))
-                    }
+        if isShowingSearchBar {
+            SearchBar(isPresented: $isShowingSearchBar, search: search, homeViewModel: homeViewModel)
+        } else if isShowingAccountView {
+            AccountView(isPresented: $isShowingAccountView, profile: profile)
+        } else {
+            HStack {
+                VStack {
+                    SearchBar(isPresented: $isShowingSearchBar, search: search, homeViewModel: homeViewModel)
                     Spacer()
                 }
-                Text(title ?? "")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 20))
-                    .bold()
-                    .lineLimit(2)
-                HStack {
-                    ForEach(tags, id: \.self) { tag in
-                        Text(tag.name)
-                            .font(.system(size: 10))
-                            .padding(.all, 5)
-                            .background(.gray.opacity(0.2))
-                            .cornerRadius(5)
-                    }
-                    Spacer()
-                }
-                HStack(spacing: 10) {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                    Text("\(likesCount ?? 0)")
-                        .font(.system(size: 12))
+                WidthSpacer(value: 10)
+                VStack {
+                    AccountView(isPresented: $isShowingAccountView, profile: profile)
                     Spacer()
                 }
             }
-            .frame(maxWidth: .infinity, minHeight: 150)
         }
     }
 }

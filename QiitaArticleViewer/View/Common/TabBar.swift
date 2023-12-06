@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct TabBar: View {
+    @EnvironmentObject var tabViewModel: TopTabViewModel
+    
     @Binding var selection: TabSelection
     
     let tabItems: [TabItems] = [TabItems(selection: .Home, tabItem: "house", tabName: "ホーム"),
                                 TabItems(selection: .Stock, tabItem: "folder.fill", tabName: "ストック"),
-                                TabItems(selection: .Likes, tabItem: "heart", tabName: "いいね"),
-                                TabItems(selection: .Account, tabItem: "person.fill", tabName: "アカウント")]
-    
+                                TabItems(selection: .History, tabItem: "clock.arrow.circlepath", tabName: "履歴")]
     var body: some View {
         VStack {
             Spacer()
-            HStack(spacing: 55) {
+            HStack(spacing: 45) {
                 ForEach(tabItems) { item in
                     VStack {
+                        HeightSpacer(value: 20)
                         Image(systemName: item.tabItem)
                             .resizable()
                             .scaledToFit()
@@ -31,17 +32,17 @@ struct TabBar: View {
                         HeightSpacer(value: 20)
                     }
                     .onTapGesture {
-                        withAnimation(.linear) {
-                            selection = item.selection
-                        }
+                        selection = item.selection
+                        tabViewModel.isTappingTabItem = item.selection
                     }
                     .foregroundColor(item.selection == selection ? .green : .gray)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: 90)
+            .frame(width: 260, height: 70)
             .background(.ultraThinMaterial)
-            .cornerRadius(17)
+            .cornerRadius(25)
+            HeightSpacer(value: 30)
         }
-        .ignoresSafeArea(edges: .bottom)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
