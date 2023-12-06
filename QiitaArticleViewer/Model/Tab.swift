@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabItems: Identifiable {
+struct TabItems: Identifiable, Hashable {
     var id = UUID()
     var selection: TabSelection
     var tabItem: String
@@ -17,8 +17,8 @@ struct TabItems: Identifiable {
 enum TabSelection {
     case Home
     case Stock
-    case Likes
-    case Account
+    case History
+    case Default
 }
 
 // ストック GET /api/v2/users/:user_id/stocks
