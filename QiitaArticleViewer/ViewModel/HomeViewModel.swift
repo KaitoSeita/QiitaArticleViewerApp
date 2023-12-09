@@ -16,6 +16,7 @@ protocol HomeViewModelProtocol: ObservableObject {
 
 final class HomeViewModel: HomeViewModelProtocol {
     @Published var article: [ArticleList] = []
+    @Published var searchPhrase: [String] = []
     @Published var isShowingErrorMessage = false
     @Published var isShowingSuccessMessage = false
     @Published var isShowingSearchBar = false
@@ -75,6 +76,21 @@ extension HomeViewModel {
             withAnimation(.easeInOut(duration: 0.3)) {
                 isShowingSearchBar = false
             }
+        }
+    }
+    
+    func onAppearSearchPhrase() {
+        do {
+            let realm = try Realm()
+            let result = realm.objects(SearchPhrase.self)
+            let phraseList = Array(result).reversed()
+            
+            for phrase in phraseList {
+                searchPhrase.append(phrase.text)
+            }
+            
+        } catch {
+            print("Error adding data to MyRealm: \(error)")
         }
     }
     
