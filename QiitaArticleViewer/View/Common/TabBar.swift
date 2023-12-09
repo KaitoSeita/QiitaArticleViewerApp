@@ -35,7 +35,7 @@ struct TabBar: View {
                         selection = item.selection
                         tabViewModel.isTappingTabItem = item.selection
                     }
-                    .foregroundColor(item.selection == selection ? .green : .gray)
+                    .foregroundColor(item.selection == selection ? .black.opacity(0.85) : .gray)
                 }
             }
             .frame(width: 260, height: 70)
